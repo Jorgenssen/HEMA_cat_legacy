@@ -4,7 +4,7 @@
 #      DESCRIPTION: preparing of raw data about fencers
 #           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.04
+#          VERSION: 0.01
 # VERSIONS HISTORY: 2018-01-11 - base logic of reading to lists,
 #                                transfering to list of objects
 #-------------------------------------------------------------------------------------

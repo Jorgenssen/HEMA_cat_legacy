@@ -1,0 +1,3 @@
+-----Некоторое количество заметок и идей, которые могут потенциально пригодиться-----
+1)itertools.combinations(iterable, [r]) - комбинации длиной r из iterable без повторяющихся элементов.
+combinations('ABCD', 2) --> AB AC AD BC BD CD

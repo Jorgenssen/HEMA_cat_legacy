@@ -9,7 +9,8 @@
 #-------------------------------------------------------------------------------------
 
 class Fencer():
-    def __init__(self, name, club, wins, defeats, hits_got, hits_given):
+    def __init__(self, ID, name, club, wins, defeats, hits_got, hits_given):
+        self.ID = ID
         self.name = name
         self.club = club
         self.wins = wins

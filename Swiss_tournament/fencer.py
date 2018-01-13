@@ -4,8 +4,9 @@
 #      DESCRIPTION: class module providing the base fencer entity
 #           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.01
+#          VERSION: 0.02
 # VERSIONS HISTORY: 2018-01-11 (0.01) - base attributes
+#                   2018-01-13 (0.02) - attribute ID was added
 #-------------------------------------------------------------------------------------
 
 class Fencer():

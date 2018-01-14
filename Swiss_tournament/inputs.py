@@ -20,28 +20,18 @@ from prettytable import PrettyTable
 #импорт внутренних модулей
 from fencer import Fencer
 
-#Проверяем локаль
-print(sys.getdefaultencoding())
-print(locale.getpreferredencoding())
-
-input_file = "test-list.csv"
-index = []
-
 #Читаем в списки
-def indexing(file):
+def indexing(file, index):
     with open(file, "r", newline="", encoding="utf-8") as file:
         for row in csv.reader(file):
             row.extend([0, 0, 0, 0])
-            print(row) #Проверочный вывод на экран консоли, удалить при сборке билда
             #генерация объектов в список
             index.append(Fencer(*row))
     return index
 
-indexing(input_file)
-
 '''
 Эту часть при сборке билда удалить
-'''
+
 #Проверка списка
 print('\n',index,'\n')
 
@@ -50,3 +40,4 @@ table = PrettyTable(['ID', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_
 for fencer in index:
     table.add_row([fencer.ID,fencer.name,fencer.club,fencer.wins,fencer.defeats,fencer.hits_got,fencer.hits_given])
 print(table)
+'''

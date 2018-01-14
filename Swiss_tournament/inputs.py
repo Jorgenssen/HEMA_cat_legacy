@@ -4,11 +4,13 @@
 #      DESCRIPTION: preparing of raw data about fencers
 #           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.03
+#          VERSION: 0.04
 # VERSIONS HISTORY: 2018-01-11 (0.01) - base logic of reading to lists,
 #                                       transfering to list of objects
 #                   2018-01-13 (0.02) - fencer ID was added as unique attribute (key)
 #                   2018-01-14 (0.03) - check of list in table format
+#                   2018-01-14 (0.04) - func indexing() was defind to be called in
+#                                       the main.py
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
@@ -26,12 +28,16 @@ input_file = "test-list.csv"
 index = []
 
 #Читаем в списки
-with open(input_file, "r", newline="", encoding="utf-8") as file:
-    for row in csv.reader(file):
-        row.extend([0, 0, 0, 0])
-        print(row) #Проверочный вывод на экран консоли, удалить при сборке билда
-        #генерация объектов в список
-        index.append(Fencer(*row))
+def indexing(file):
+    with open(file, "r", newline="", encoding="utf-8") as file:
+        for row in csv.reader(file):
+            row.extend([0, 0, 0, 0])
+            print(row) #Проверочный вывод на экран консоли, удалить при сборке билда
+            #генерация объектов в список
+            index.append(Fencer(*row))
+    return index
+
+indexing(input_file)
 
 '''
 Эту часть при сборке билда удалить

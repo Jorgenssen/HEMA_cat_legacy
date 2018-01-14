@@ -4,14 +4,16 @@
 #      DESCRIPTION: preparing of raw data about fencers
 #           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.02
+#          VERSION: 0.03
 # VERSIONS HISTORY: 2018-01-11 (0.01) - base logic of reading to lists,
 #                                       transfering to list of objects
 #                   2018-01-13 (0.02) - fencer ID was added as unique attribute (key)
+#                   2018-01-14 (0.03) - check of list in table format
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
 import csv, sys, locale
+from prettytable import PrettyTable
 
 #импорт внутренних модулей
 from fencer import Fencer
@@ -24,7 +26,7 @@ input_file = "test-list.csv"
 index = []
 
 #Читаем в списки
-with open(input_file, "r", newline="") as file:
+with open(input_file, "r", newline="", encoding="utf-8") as file:
     for row in csv.reader(file):
         row.extend([0, 0, 0, 0])
         print(row) #Проверочный вывод на экран консоли, удалить при сборке билда
@@ -38,7 +40,7 @@ with open(input_file, "r", newline="") as file:
 print('\n',index,'\n')
 
 #Проверка атрибутов объектов
-print('ID', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given')
+table = PrettyTable(['ID', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given'])
 for fencer in index:
-    print(fencer.ID, ' - ', fencer.name, ' - ', fencer.club, ' - ', fencer.wins, ' - ', fencer.defeats, ' - ', fencer.hits_got, ' - ', fencer.hits_given)
-
+    table.add_row([fencer.ID,fencer.name,fencer.club,fencer.wins,fencer.defeats,fencer.hits_got,fencer.hits_given])
+print(table)

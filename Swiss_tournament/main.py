@@ -20,6 +20,13 @@ index = []
 input_file = "test-list.csv"
 indexing(input_file, index)
 
+'''
+    После выполнения функции indexing(*args) мы получили список index, где содержатся
+сгенерированные экземпляры класса Fencer (наши дорогие драчуны).
+    Все манипуляции по матчингу, построению рейтинга и т.д. должны выполняться либо
+непосредственно с этим списком, либо с его копиями.
+'''
+
 #Проверяем стартовый протокол
 table = PrettyTable(['ID', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given'])
 for fencer in index:

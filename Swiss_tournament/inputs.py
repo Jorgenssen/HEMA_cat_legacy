@@ -10,14 +10,14 @@
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
-import csv, sys, locale
+import csv, sys, locale, sqlite3
 
 #импорт внутренних модулей
 from fencer import Fencer
 
 #Проверяем локаль
-print(sys.getdefaultencoding())
-print(locale.getpreferredencoding())
+#print(sys.getdefaultencoding())
+#print(locale.getpreferredencoding())
 
 input_file = "test-list.csv"
 index = []
@@ -37,7 +37,7 @@ with open(input_file, "r", newline="") as file:
 print('\n',index,'\n')
 
 #Проверка атрибутов объектов
-print('name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given')
+print('id', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given')
 for fencer in index:
-    print(fencer.name, ' - ', fencer.club, ' - ', fencer.wins, ' - ', fencer.defeats, ' - ', fencer.hits_got, ' - ', fencer.hits_given)
-
+    print(fencer.ID, ' - ', fencer.name, ' - ', fencer.club, ' - ', fencer.wins, ' - ', fencer.defeats, ' - ', fencer.hits_got, ' - ', fencer.hits_given)
+    #print(fencer.name)

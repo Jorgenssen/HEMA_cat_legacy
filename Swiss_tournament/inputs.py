@@ -14,26 +14,12 @@
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
-<<<<<<< HEAD
-import csv, sys, locale, sqlite3
-=======
 import csv, sys, locale
 from prettytable import PrettyTable
->>>>>>> 610e34674f304435791a9af66ba83d402a619967
 
 #импорт внутренних модулей
 from fencer import Fencer
 
-<<<<<<< HEAD
-#Проверяем локаль
-#print(sys.getdefaultencoding())
-#print(locale.getpreferredencoding())
-
-input_file = "test-list.csv"
-index = []
-
-=======
->>>>>>> 610e34674f304435791a9af66ba83d402a619967
 #Читаем в списки
 def indexing(file, index):
     with open(file, "r", newline="", encoding="utf-8") as file:
@@ -43,6 +29,11 @@ def indexing(file, index):
             index.append(Fencer(*row))
     return index
 
+def making_update(file, index):
+    with open(file, "r", newline="", encoding="utf-8") as file:
+        for row in csv.reader(file):
+            index.append(Fencer(*row))
+    return index
 '''
 Эту часть при сборке билда удалить
 
@@ -50,15 +41,8 @@ def indexing(file, index):
 print('\n',index,'\n')
 
 #Проверка атрибутов объектов
-<<<<<<< HEAD
-print('id', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given')
-for fencer in index:
-    print(fencer.ID, ' - ', fencer.name, ' - ', fencer.club, ' - ', fencer.wins, ' - ', fencer.defeats, ' - ', fencer.hits_got, ' - ', fencer.hits_given)
-    #print(fencer.name)
-=======
 table = PrettyTable(['ID', 'name', 'club', 'wins', 'defeats', 'hits_got', 'hits_given'])
 for fencer in index:
     table.add_row([fencer.ID,fencer.name,fencer.club,fencer.wins,fencer.defeats,fencer.hits_got,fencer.hits_given])
 print(table)
 '''
->>>>>>> 610e34674f304435791a9af66ba83d402a619967

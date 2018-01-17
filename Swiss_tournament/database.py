@@ -1,3 +1,15 @@
+#!/usr/bin/python
+#-------------------------------------------------------------------------------------
+#             FILE: database.py
+#      DESCRIPTION: methods for work with database
+#           AUTHOR: Arkadiy Kulikov, martin.o.dinnel@gmail.com
+#          COMPANY: Tramazzone
+#          VERSION: 0.01
+# VERSIONS HISTORY: 2018-01-16 (0.01) - base raw methodss - create database,
+#                                       made a table, ask table and update table
+#                                       with new data
+#
+#-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
 import csv, sys, locale, sqlite3

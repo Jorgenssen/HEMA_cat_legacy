@@ -2,15 +2,18 @@
 #-------------------------------------------------------------------------------------
 #             FILE: inputs.py
 #      DESCRIPTION: preparing of raw data about fencers
-#           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
+#           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com,
+#                   Arkadiy Kulikov, martin.o.dinnel@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.04
+#          VERSION: 0.05
 # VERSIONS HISTORY: 2018-01-11 (0.01) - base logic of reading to lists,
 #                                       transfering to list of objects
 #                   2018-01-13 (0.02) - fencer ID was added as unique attribute (key)
 #                   2018-01-14 (0.03) - check of list in table format
 #                   2018-01-14 (0.04) - func indexing() was defind to be called in
 #                                       the main.py
+#                   2018-01-16 (0.05) - create func making_update() to update
+#                                       existing database with new data
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей

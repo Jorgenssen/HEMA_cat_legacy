@@ -3,11 +3,14 @@
 #             FILE: fencer.py
 #      DESCRIPTION: class module providing the base fencer entity
 #           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
+#                   Arkadiy Kulikov, martin.o.dinnel@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.00
+#          VERSION: 0.02
 # VERSIONS HISTORY: 2018-01-14 (0.01) - there were added import of class Fencer and
 #                                       func indexing() from inputs, and input flow
 #                                       now is defined here
+#                   2018-01-16 (0.02) - added methods for work with database,
+#                                       change current working flow of programm
 #-------------------------------------------------------------------------------------
 
 

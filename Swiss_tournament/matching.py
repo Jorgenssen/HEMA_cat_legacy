@@ -9,7 +9,7 @@
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
-import random, re
+import random
 from prettytable import PrettyTable
 import logging
 import logging.config
@@ -46,10 +46,6 @@ def matching(index):
     if matched:
         matched.append((not_matched[0],'auto_win'))
                             
-
-#вызов функции должен быть перенесен в main.py
-matching(index)
-
 #проверка списка
 print(matched)
 

@@ -12,11 +12,13 @@
 #                   2018-01-16 (0.02) - added methods for work with database,
 #                                       change current working flow of programm
 #                   2018-01-19 (0.03) - logging was implemented
+#                   2018-01-19 (0.04) - initial matching was implemented
 #-------------------------------------------------------------------------------------
 
 
 from fencer import Fencer
 from inputs import indexing, making_update
+from matching import matching
 from database import create_db, first_update, ask_table, update_table
 from prettytable import PrettyTable
 import logging
@@ -52,6 +54,9 @@ create_db()
 
 #вбрасываем первых ребят
 first_update(index)
+
+#вызов функции должен быть перенесен в main.py
+matching(index)
 
 #прописываем подравшихся драчунов
 update_table(update)

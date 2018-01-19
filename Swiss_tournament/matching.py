@@ -9,7 +9,7 @@
 #-------------------------------------------------------------------------------------
 
 #импорт базовых модулей
-import random
+import random, re
 from prettytable import PrettyTable
 import logging
 import logging.config
@@ -26,48 +26,45 @@ logger = logging.getLogger("Matching")
 random.randint(1, len(index))
 
 #инициализируем необходимые переменные
-matched_fe = []
-matched_op = []
-opponent_ID = 0
+matched = []
 
 #магическая функция, которая разбивает наших драчунов на пары
 def matching(index):
-    while len(matched_fe)+len(matched_op)+1 < len(index):
-        for fencer in index:
-            if int(fencer.ID) not in matched_fe and int(fencer.ID) not in matched_op:
-                opponent_ID = random.randint(1, len(index))
-                if opponent_ID not in matched_op and opponent_ID not in matched_fe and opponent_ID != int(fencer.ID):
+    not_matched = []
+    opponent_ID = 0
 
-                    matched_fe.append(int(fencer.ID))
-                    matched_op.append(opponent_ID)
+    for fencer in index:
+        not_matched.append(int(fencer.ID))
+
+    while len(not_matched) > 1:  
+        for fencer in not_matched:
+            not_matched.remove(fencer)
+            opponent_ID = random.choice(not_matched)
+            not_matched.remove(opponent_ID)
+            matched.append((fencer, opponent_ID))
+
+    if matched:
+        matched.append((not_matched[0],'auto_win'))
+                            
 
 #вызов функции должен быть перенесен в main.py
 matching(index)
 
-#проверка списков
-print(matched_fe)
-print(matched_op)
+#проверка списка
+print(matched)
 
 #вывод пар
 table = PrettyTable(['№','Name 1', 'Name 2'])
-for i in range(len(matched_fe)):
+for i in range(len(matched)):
     '''
     index[matched_fe[i]-1].name/index[matched_op[i]-1].name - здесь мы обращаемся
     к атрибуту name экземпляра fencer по matched_fe[i]-1,
     где matched_fe[i] - это интовое значение fencer.ID, которое у нас на 1 больше,
     чем порядковый индекс этого же экземпляра в index'e
     '''
-    table.add_row([i+1,index[matched_fe[i]-1].name, index[matched_op[i]-1].name])
-#добавляем в таблицу бойца с автопобедой
-for fencer in index:
-    if int(fencer.ID) not in matched_fe and int(fencer.ID) not in matched_op:
-        '''
-        len(matched_fe)+1 - выводим порядковый номер на 1 больше, чем было боев уже
-        (длина списка matched_fe/matched_op равна количеству боев)
-
-        index[int(fencer.ID)-1].name - обращаемся к атрибуту name эземпляра fencer,
-        где fencer.ID на 1 больше, чем порядковый индекс экземпляра в index
-        '''
-        table.add_row([len(matched_fe)+1, index[int(fencer.ID)-1].name, 'auto-win'])
-    
+    try:
+        table.add_row([i+1,index[matched[i][0]-1].name, index[matched[i][1]-1].name])
+    except TypeError as err:
+        table.add_row([i+1,index[matched[i][0]-1].name, 'auto win'])
+   
 print(table)

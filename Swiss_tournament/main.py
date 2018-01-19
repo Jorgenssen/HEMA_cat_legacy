@@ -5,12 +5,13 @@
 #           AUTHOR: Nikita Tatiannikov, n.tatyannikov@gmail.com
 #                   Arkadiy Kulikov, martin.o.dinnel@gmail.com
 #          COMPANY: Tramazzone
-#          VERSION: 0.02
+#          VERSION: 0.03
 # VERSIONS HISTORY: 2018-01-14 (0.01) - there were added import of class Fencer and
 #                                       func indexing() from inputs, and input flow
 #                                       now is defined here
 #                   2018-01-16 (0.02) - added methods for work with database,
 #                                       change current working flow of programm
+#                   2018-01-19 (0.03) - logging was implemented
 #-------------------------------------------------------------------------------------
 
 
@@ -18,6 +19,12 @@ from fencer import Fencer
 from inputs import indexing, making_update
 from database import create_db, first_update, ask_table, update_table
 from prettytable import PrettyTable
+import logging
+import logging.config
+
+#выбираем лог-конфиг и логгера
+logging.config.fileConfig('log.conf')
+logger = logging.getLogger("Main")
 
 #Вводим стартовый протокол
 index = []

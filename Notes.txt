@@ -29,3 +29,5 @@ itertools.groupby(iterable, key=None) - группирует элементы п
 3)про логирование
 https://docs.python.org/3/library/logging.html
 >>>>>>> 610e34674f304435791a9af66ba83d402a619967
+
+4) Надо подумать еще.

@@ -27,21 +27,17 @@ logger = logging.getLogger("Database")
 #создаём базу данных
 def create_db():
     logger.info('Creating a DB')
-    try:
-        conn = sqlite3.connect('fencers.db')
-        cursor = conn.cursor()
-        cursor.execute("""CREATE TABLE fencers
+    conn = sqlite3.connect('fencers.db')
+    cursor = conn.cursor()
+    cursor.executescript("""
+        DROP TABLE if exists fencers;
+        CREATE TABLE fencers
                     (id integer, name text, club text, wins integer,
-                    defeats integer, hits_got integer, hits_given integer)
-                    """)
-        logger.info('Table fencers was created successfully')
-        pass
-    except sqlite3.DatabaseError as err:
-        if(err=='Error:  table fencers already exists'):
-            print('Everything is ok')
-            logger.info('Table fencers already exists')
-        pass
+                    defeats integer, hits_got integer, hits_given integer);
+    """)
+    conn.commit()
     conn.close()
+    logger.info('Database created successfully')
 
 
 #первично пишем драчунов в базу

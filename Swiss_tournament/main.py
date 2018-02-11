@@ -37,6 +37,7 @@ indexing(input_file, index)
 update = []
 test_update = "test-update.csv"
 making_update(test_update, update)
+
 '''
     После выполнения функции indexing(*args) мы получили список index, где содержатся
 сгенерированные экземпляры класса Fencer (наши дорогие драчуны).

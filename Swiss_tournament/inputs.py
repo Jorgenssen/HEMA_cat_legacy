@@ -35,7 +35,7 @@ def indexing(file, index):
     logger.info('Parsing of fighter list')
     with open(file, "r", newline="", encoding="utf-8") as file:
         for row in csv.reader(file):
-            row.extend([0, 0, 0, 0])
+            row.extend([0, 0, 0, 0, 0])
             #генерация объектов в список
             index.append(Fencer(*row))
     return index

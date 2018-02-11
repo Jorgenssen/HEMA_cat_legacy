@@ -18,6 +18,7 @@
 
 from fencer import Fencer
 from inputs import indexing, making_update
+from dwarf import dwarfing
 from matching import matching
 from database import create_db, first_update, ask_table, update_table
 from prettytable import PrettyTable
@@ -36,6 +37,7 @@ indexing(input_file, index)
 update = []
 test_update = "test-update.csv"
 making_update(test_update, update)
+
 '''
     После выполнения функции indexing(*args) мы получили список index, где содержатся
 сгенерированные экземпляры класса Fencer (наши дорогие драчуны).
@@ -64,3 +66,12 @@ update_table(update)
 #дёргаем текущую версию базы
 for x in ask_table():
      print(x)
+
+#делаем рейтинг
+dwarfing(index)
+
+#смотрим табличку
+table = PrettyTable(['ID', 'name', 'club', 'wins', 'defeats', 'hits_got - hits_given'])
+for fencer in index:
+    table.add_row([fencer.ID,fencer.name,fencer.club,fencer.wins,fencer.defeats,int(fencer.hits_got) - int(fencer.hits_given)])
+print(table)

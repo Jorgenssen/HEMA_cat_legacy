@@ -58,24 +58,3 @@ def matching(index):
             table.add_row([i+1,index[matched[i][0]-1].name, 'auto win'])
    
     print(table)
-                          
-#проверка списка
-print(matched)
-
-'''
-#вывод пар
-table = PrettyTable(['№','Name 1', 'Name 2'])
-for i in range(len(matched)):
-    
-    index[matched_fe[i]-1].name/index[matched_op[i]-1].name - здесь мы обращаемся
-    к атрибуту name экземпляра fencer по matched_fe[i]-1,
-    где matched_fe[i] - это интовое значение fencer.ID, которое у нас на 1 больше,
-    чем порядковый индекс этого же экземпляра в index'e
-    
-    try:
-        table.add_row([i+1,index[matched[i][0]-1].name, index[matched[i][1]-1].name])
-    except TypeError as err:
-        table.add_row([i+1,index[matched[i][0]-1].name, 'auto win'])
-   
-print(table)
-'''

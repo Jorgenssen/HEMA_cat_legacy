@@ -1,0 +1,24 @@
+INFO 2018-02-11 18:21:53,309 Inputs Parsing of fighter list
+INFO 2018-02-11 18:23:40,191 Inputs Parsing of fighter list
+INFO 2018-02-11 18:23:40,196 Inputs Making update into DB table
+INFO 2018-02-11 18:24:22,389 Inputs Parsing of fighter list
+INFO 2018-02-11 18:24:22,395 Matching Initial matching...
+INFO 2018-02-11 18:24:22,401 Matching Initial matching finished
+INFO 2018-02-11 18:30:06,767 Inputs Parsing of fighter list
+INFO 2018-02-11 18:30:06,820 Matching Initial matching...
+INFO 2018-02-11 18:30:06,820 Matching Initial matching finished
+INFO 2018-02-11 18:42:07,633 Inputs Parsing of fighter list
+INFO 2018-02-11 18:42:07,671 Database Creating a DB
+INFO 2018-02-11 18:42:07,849 Database Table fencers was created successfully
+INFO 2018-02-11 18:42:07,893 Database Initial update to table
+INFO 2018-02-11 18:42:07,985 Matching Initial matching...
+INFO 2018-02-11 18:42:08,023 Matching Initial matching finished
+INFO 2018-02-11 18:44:27,478 Inputs Parsing of fighter list
+INFO 2018-02-11 18:44:27,494 Inputs Making update into DB table
+INFO 2018-02-11 18:44:27,504 Database Creating a DB
+INFO 2018-02-11 18:44:28,018 Database Database created successfully
+INFO 2018-02-11 18:44:28,024 Database Initial update to table
+INFO 2018-02-11 18:44:28,402 Matching Initial matching...
+INFO 2018-02-11 18:44:28,598 Matching Initial matching finished
+INFO 2018-02-11 18:44:28,630 Database Making an update of fights took place
+INFO 2018-02-11 18:44:28,934 Database Making an update from DB
